@@ -1,0 +1,173 @@
+.body {
+  overflow: hidden;
+}
+
+.main--container {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.3;
+  margin: 0 auto;
+  max-width: 1200px;
+  backface-visibility: hidden;
+}
+
+.header--container {
+  min-width: 650px;
+  min-height: 300px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(51, 51, 51);
+
+  animation: fadeFromBlack 0.5s ease-in-out;
+}
+
+.upper {
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(90, 139, 75, 0.822),
+      rgba(0, 0, 0, 0.952)
+    ),
+    url(./asdf.jpeg);
+  clip-path: polygon(0 0, 100% 0, 100% 77%, 0 100%);
+  animation: fadeDown 2s ease-in-out;
+}
+
+.lower {
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(119, 75, 139, 0.822),
+      rgba(0, 0, 0, 0.952)
+    ),
+    url(./seattle.jpeg);
+  clip-path: polygon(0 23%, 100% 0, 100% 100%, 0 100%);
+  transform: translateY(-70px);
+  animation: fadeUp 2s ease-in-out;
+}
+
+.lowest {
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(214, 120, 13, 0.822),
+      rgba(0, 0, 0, 0.952)
+    ),
+    url(./miami.jpeg);
+  clip-path: polygon(10% 90%, 90% 100%, 100% 0, 0 0);
+  animation: fadeUpBottom 2s ease-in-out;
+  transform: translateY(-70px);
+}
+
+.header--text {
+  text-transform: uppercase;
+  display: flex;
+  backface-visibility: hidden;
+}
+
+.primary--header {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-weight: 300;
+  font-size: 60px;
+  letter-spacing: 40px;
+  margin-right: -40px;
+  animation: fadeFromLeft 5s ease-out;
+}
+
+.secondary--header {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-weight: 100;
+  font-size: 40px;
+  letter-spacing: 20px;
+  margin-right: -20px;
+  animation: fadeFromRight 7s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .header--container {
+    display: flex;
+  }
+}
+
+@keyframes fadeFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
+
+  50% {
+    transform: translate(0);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  50% {
+    transform: translate(0);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeFromBlack {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-70px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUpBottom {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-70px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
